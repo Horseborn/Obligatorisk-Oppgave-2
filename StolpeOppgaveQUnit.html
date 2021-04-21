@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>QUnit Example</title>
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/qunit/qunit-2.9.2.css"
+    />
+  </head>
+
+  <body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.9.2.js"></script>
+    <script src="QunitOblig_2.js"></script>
+    <script>
+      function show() {}
+      let barNumber;
+      let number;
+      let btnDisabled;
+
+      function updateView() {}
+
+      QUnit.test("btnDisable", function (assert) {
+        barNo = 2;
+        barNumber = 2;
+        btnDisabled = "";
+        barKlikk(barNo);
+        assert.equal(btnDisabled, "Disabled");
+      });
+      QUnit.test("btnEnable", function (assert) {
+        barNo = 3;
+        barNumber = 3;
+        btnDisabled = "";
+        barKlikk(barNo);
+        barKlikk(barNo);
+        assert.equal(btnDisabled, "");
+      });
+
+      QUnit.test("Remove", function (assert) {
+        number = [1, 2, 3];
+        inputValue = 1;
+        removeBar();
+        assert.deepEqual(number, [2, 3]);
+      });
+
+      QUnit.test("Change", function (assert) {
+        number = [5, 6, 7];
+        inputValue = 9;
+        barNumber = 3;
+        changeStolpe();
+        assert.equal(number.length, 3);
+        assert.equal(number[2], 9);
+      });
+
+      QUnit.test("Adde Stolpe", function (assert) {
+        number = [];
+        inputValue = 3;
+        addStolpe();
+        assert.equal(number.length, 1);
+        assert.equal(number[0], 3);
+      });
+    </script>
+  </body>
+</html>
