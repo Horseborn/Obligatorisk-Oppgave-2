@@ -97,8 +97,11 @@
       }
 
       function changeStolpe() {
-        numbers.splice(barNumber - 1, 1, inputValue);
-
+        if (inputValue > 0 && inputValue < 10) {
+          numbers.splice(barNumber - 1, 1, inputValue);
+        } else {
+          alert("Ugyldig verdi");
+        }
         show();
       }
 
